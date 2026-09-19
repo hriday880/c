@@ -1,0 +1,32 @@
+====================================================
+TYPOGRAPHY TOOL - SETUP & ARCHITECTURE GUIDE
+====================================================
+
+Hi! This guide will help you get the Typography Tool running instantly on your machine.
+
+🌟 WHAT'S NEW (MAJOR UPGRADES):
+1. Node.js Backend: The backend has been completely rewritten in Node.js (inside `/server-node/server.cjs`). 
+   - WHY: It eliminates the need for C++ compilers, meaning anyone on Mac/Windows/Linux can run it instantly without Apple Gatekeeper warnings or Xcode Developer Tools installation errors.
+2. Deezer API Fallback: Added a massive fallback to the Deezer API for underground/niche songs that don't exist on iTunes.
+3. Typography System: Integrated Google Fonts dynamically to inject 8 unique, vibe-accurate fonts grouped into 4 categories (Primary Vibe, Artistic Flair, Exact Mood, Clean).
+4. Accurate Mood Radar: The radar chart dimensions (Warmth, Energy, Texture, etc.) are now heuristically mapped to the exact genre of the song rather than being random.
+
+🚀 HOW TO RUN THE PROJECT:
+We created a 1-click startup script that handles EVERYTHING (installing dependencies, cleaning up ports, starting the backend, building the frontend, and serving it).
+
+Mac/Linux Users:
+1. Open your terminal in this folder.
+2. Run: ./start.sh
+
+Windows Users:
+1. Open your terminal in this folder.
+2. Run: npm install
+3. Run: node server-node/server.cjs
+4. In a second terminal tab, run: npm run build && npx vite preview
+
+Your app will instantly be available at http://localhost:4173 !
+
+📁 FILE STRUCTURE NOTES:
+- `server-node/server.cjs`: The new robust Node.js backend.
+- `src/app/App.tsx`: Contains the upgraded 8-font typography grid, dynamic font injectors, and Deezer fallback logic.
+- `.gitignore`: Added to securely hide `node_modules`, `dist`, and the old compiled C++ binaries so GitHub doesn't flag them.
