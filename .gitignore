@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+.env
+npm-debug.log*
+
+# Ignore compiled C++ binary so Apple Gatekeeper doesn't flag it
+server-cpp/server
